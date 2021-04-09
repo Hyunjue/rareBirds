@@ -1,0 +1,21 @@
+html {
+  height: 100%; }
+  html body {
+    height: 100%; }
+    html body .top_wp {
+      border-top: 5px solid #efd8d2;
+      background: #fff;
+      width: 100%; }
+      html body .top_wp:after {
+        content: '.';
+        clear: both;
+        display: block;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden; }
+      html body .top_wp .trq {
+        height: 72px;
+        width: 100%;
+        background: pink; }
+        html body .top_wp .trq .thang {
+          height: 100px; }

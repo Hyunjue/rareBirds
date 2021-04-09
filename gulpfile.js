@@ -2,48 +2,71 @@
 const gulp = require("gulp");
 // 引用gulp插件压缩文件
 const htmlmin = require('gulp-htmlmin');
-const connect = require('gulp-connect  ');
+const connect = require('gulp-connect');
 // 引用gulp的插件抽取公共ht
 const fileinclude = require('gulp-file-include');
 // 引用gulp插件把less文件转换成css
-const less = require('gulp-less');
+const sass = require('gulp-sass');
 // 使用gulp.task建立任务
 // 1.任务的名称
 // 2.任务的回调函数
-gulp.task("isMe", () => {
-    console.log("这是我的第一个gulp任务，我执行了！");
-    // 1.使用gulp.src获取要处理的文件
-    gulp.src('./src/css/style.css')
-        .pipe(gulp.dest('dist/css'));/* 自动生成css文件夹*/
-});
-// 创建压缩的gulp任务
-gulp.task("htmlmin", () => {
+// gulp.task("isMe", () => {
+//     console.log("这是我的第一个gulp任务，我执行了！");
+//     // 1.使用gulp.src获取要处理的文件
+//     gulp.src('./src/css/style.css')
+//         .pipe(gulp.dest('dist/css'));/* 自动生成css文件夹*/
+// });
+// copy首页
+gulp.task("indexhtml", done => {
     console.log("successful!");
-    gulp.src("./src/*.html")
-        // 压缩html文件里的代码
-        .pipe(fileinclude())
-        .pipe(htmlmin({
-            /* 折叠 空格*/
-            collapseWhitespace: true
-        }))
-        /* 输出到dist文件里 */
-        .pipe(gulp.dest("dist"));
+    gulp.src("./src/index.html")
+        .pipe(gulp.dest("dist")).pipe(connect.reload());
+    done();
 });
-// css任务
-// 1.less语法转换
-// 2.css代码压缩
-gulp.task("cssmin", () => {
-    gulp.src("./src/css/*.less")
-        .pipe(less)
-        .pipe(gulp.dest('dist/css'))
+// copy分页
+gulp.task("copyhtml", done => {
+    gulp.src(["./src/*.html", "!./src/index.html"])
+        .pipe(gulp.dest("dist/html")).pipe(connect.reload());
+    done();
+});
+// copy scss样式
+gulp.task("scss", done => {
+    gulp.src("./src/sass/*.scss")
+        .pipe(sass())
+        .pipe(gulp.dest('dist/css')).pipe(connect.reload());
+    done();
 })
+// copy js文件
+gulp.task("cjs", done => {
+    gulp.src("./js/*.js").pipe(gulp.dest("dist/js")).pipe(connect.reload());
+    done();
+})
+// copy bootstrap框架
+gulp.task("bootstrap", done => {
+    gulp.src("./src/bootstrap/**")
+        .pipe(gulp.dest('dist/bootstrap'));
+    done();
+})
+// copy images文件
+gulp.task("cimg", done => {
+    gulp.src("./images/*").pipe(gulp.dest('dist/images')).pipe(connect.reload());
+    done();
+})
+// 服务器task
 gulp.task("server", done => {
     connect.server({
-        root: "dist"
+        root: "dist",
+        port: 1752,
+        livereload: true
     })
     done();
 })
 gulp.task("watch", done => {
-    gulp.watch("./src/index.html", gulp.series('htmlmin'));
+    gulp.watch("./src/*.html", gulp.series('copyhtml'));
+    gulp.watch("./src/index.html", gulp.series('indexhtml'));
+    gulp.watch("./src/js/*.js", gulp.series('cjs'));
+    gulp.watch("./src/sass/*.scss", gulp.series('scss'));
     done();
 })
+gulp.task("tasks", gulp.parallel('cjs', 'bootstrap', 'scss', 'indexhtml', 'copyhtml'));
+gulp.task("default", gulp.parallel("tasks", "watch", "server"));

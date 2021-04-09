@@ -1,0 +1,42 @@
+$r100:100px;
+$pink:pink;
+$b100:100%;
+$block:block;
+$both:both;
+$hidden:hidden;
+$zero:0;
+$flex:flex;
+// color
+$white:#fff;
+@mixin clean {
+    content: '.';
+    clear: $both;
+    display: $block;
+    height:$zero;
+    overflow: $hidden;
+    visibility: $hidden;
+}
+html{
+    height: $b100;
+    body{
+        height: $b100;
+        .top_wp{
+            &:after{
+                @include clean();
+            }
+            border-top:5px solid #efd8d2;
+            background:$white;
+            width: $b100;
+            .trq{
+                height: 72px;
+                width: $b100;
+                background: $pink;
+                .thang{
+                    height: $r100;
+                }
+                
+            }
+        }
+    }
+}
+
