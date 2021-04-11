@@ -1,13 +1,29 @@
 $r100:100px;
-$pink:pink;
+$spbtn:space-between;
 $b100:100%;
 $block:block;
+$left:left;
+$right:right;
 $both:both;
 $hidden:hidden;
 $zero:0;
+$yi:1;
+$absolute:absolute;
 $flex:flex;
+$start:start;
+$end:end;
+$column:column;
+$center:center;
+$none:none;
 // color
+$transparent:transparent;
 $white:#fff;
+$pink:pink;
+$black:black;
+@mixin qul{
+    margin: 0;
+    padding: 0;
+}
 @mixin clean {
     content: '.';
     clear: $both;
@@ -16,27 +32,86 @@ $white:#fff;
     overflow: $hidden;
     visibility: $hidden;
 }
-html{
-    height: $b100;
-    body{
+li{
+    list-style: $none;
+}
+@mixin ac {
+    display: $block;
+    text-decoration: $none;
+}
+.mid_wp{
+    &:after{
+        @include clean();
+    }
+    background: $pink;
+    flex: $yi;
+    display: $flex;
+    justify-content: $center;
+    .inner{
+        &::after{
+            @include clean();
+        }
+        width: 1200px;
+        // 首页轮播
+// -----------------------------------------------------------
+.t_ul{
+    // 去掉滚动图片的小黑点样式
+    @include qul();
+    list-style: $none; 
+    width: $b100;
+    height: 666px;    
+    position: relative;  // 设置想对定位
+    // 重新定义一个ul用li来实现小黑点样式
+    display: $flex;
+    justify-content: $center;
+    & > li{
+        width: $b100;
         height: $b100;
-        .top_wp{
-            &:after{
-                @include clean();
-            }
-            border-top:5px solid #efd8d2;
-            background:$white;
+        position: $absolute;
+        display: $flex;
+        justify-content: $center;
+        a{
+            display: block;
             width: $b100;
-            .trq{
-                height: 72px;
-                width: $b100;
-                background: $pink;
-                .thang{
-                    height: $r100;
-                }
-                
+            height: $b100;
+            display: $flex;
+            justify-content: center;
+            img{
+                cursor: pointer;
             }
         }
     }
+    .dot{
+        @include qul();
+        width: 54px;
+        height: 8px;
+        position: $absolute;
+        z-index: 50;
+        bottom: 32px;
+        background: $transparent;
+        display: $flex;
+        justify-content: $spbtn;
+        align-items: $center;
+        & > li{
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgb(255, 255, 255);
+        }
+        .banner_btn{
+            background: #f09276;
+        }
+    }
 }
-
+        .search{
+            width: $b100;
+            height: 300px;
+            background: gray;
+        }
+        .showpic{
+            width: $b100;
+            height: 1700px;
+            background: gold;
+        }
+    }
+}

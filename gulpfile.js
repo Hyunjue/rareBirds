@@ -20,13 +20,17 @@ const sass = require('gulp-sass');
 gulp.task("indexhtml", done => {
     console.log("successful!");
     gulp.src("./src/index.html")
-        .pipe(gulp.dest("dist")).pipe(connect.reload());
+        .pipe(fileinclude())
+        .pipe(gulp.dest("dist"))
+        .pipe(connect.reload());
     done();
 });
 // copy分页
 gulp.task("copyhtml", done => {
     gulp.src(["./src/*.html", "!./src/index.html"])
-        .pipe(gulp.dest("dist/html")).pipe(connect.reload());
+        .pipe(fileinclude())
+        .pipe(gulp.dest("dist"))
+        .pipe(connect.reload());
     done();
 });
 // copy scss样式
@@ -35,23 +39,27 @@ gulp.task("scss", done => {
         .pipe(sass())
         .pipe(gulp.dest('dist/css')).pipe(connect.reload());
     done();
-})
+});
 // copy js文件
 gulp.task("cjs", done => {
-    gulp.src("./js/*.js").pipe(gulp.dest("dist/js")).pipe(connect.reload());
+    gulp.src("./src/js/*.js").pipe(gulp.dest("dist/js")).pipe(connect.reload());
     done();
-})
+});
 // copy bootstrap框架
 gulp.task("bootstrap", done => {
     gulp.src("./src/bootstrap/**")
         .pipe(gulp.dest('dist/bootstrap'));
     done();
-})
+});
 // copy images文件
 gulp.task("cimg", done => {
-    gulp.src("./images/*").pipe(gulp.dest('dist/images')).pipe(connect.reload());
+    gulp.src("./src/images/*").pipe(gulp.dest('dist/images')).pipe(connect.reload());
     done();
-})
+});
+gulp.task("fonts", done => {
+    gulp.src("./src/fonts/*").pipe(gulp.dest("dist/fonts")).pipe(connect.reload());
+    done();
+});
 // 服务器task
 gulp.task("server", done => {
     connect.server({
@@ -60,13 +68,17 @@ gulp.task("server", done => {
         livereload: true
     })
     done();
-})
+});
+
 gulp.task("watch", done => {
     gulp.watch("./src/*.html", gulp.series('copyhtml'));
     gulp.watch("./src/index.html", gulp.series('indexhtml'));
     gulp.watch("./src/js/*.js", gulp.series('cjs'));
     gulp.watch("./src/sass/*.scss", gulp.series('scss'));
+    gulp.watch("./src/fonts/*", gulp.series("fonts"));
+    gulp.watch("./src/images/*", gulp.series("cimg"));
+    gulp.watch("./src/common/*.html", gulp.parallel("copyhtml", "indexhtml"));
     done();
-})
-gulp.task("tasks", gulp.parallel('cjs', 'bootstrap', 'scss', 'indexhtml', 'copyhtml'));
+});
+gulp.task("tasks", gulp.parallel('fonts', 'cimg', 'cjs', 'bootstrap', 'scss', 'indexhtml', 'copyhtml'));
 gulp.task("default", gulp.parallel("tasks", "watch", "server"));

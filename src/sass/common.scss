@@ -1,0 +1,316 @@
+$r100:100px;
+$spbtn:space-between;
+$b100:100%;
+$block:block;
+$left:left;
+$right:right;
+$both:both;
+$hidden:hidden;
+$zero:0;
+$yi:1;
+$absolute:absolute;
+$flex:flex;
+$start:start;
+$end:end;
+$column:column;
+$center:center;
+$none:none;
+// color
+$transparent:transparent;
+$white:#fff;
+$pink:pink;
+$black:black;
+@mixin qul{
+    margin: 0;
+    padding: 0;
+}
+@mixin clean {
+    content: '.';
+    clear: $both;
+    display: $block;
+    height:$zero;
+    overflow: $hidden;
+    visibility: $hidden;
+}
+li{
+    list-style: $none;
+}
+@mixin ac {
+    display: $block;
+    text-decoration: $none;
+}
+html{
+    height: $b100;
+    body{
+        height: $b100;
+        display: $flex;
+        flex-direction: $column;
+
+        .top_wp{
+            &:after{
+                @include clean();
+            }
+            border-top:5px solid #efd8d2;
+            background:$white;
+            display: $flex;
+            justify-content: $center;
+            .inner{
+                height: 72px;
+                width: 1200px;
+                display: $flex;
+                .lef{
+                    width: 150px;
+                    display: $flex;
+                    justify-content: $start;
+                    align-items: $center;
+                    a{
+                        @include ac();
+                        img{
+                            display: $block;
+                        }
+                    }
+                }
+                .mid{
+                    width: 616px;
+                    .tnav{
+                        margin: 0;
+                        padding: 0;
+                        display: block;
+                        width: $b100;
+                        height: $b100;
+                        display: $flex;
+                        justify-content: $start;
+                        align-items: $center;
+                        li{
+                            padding: 0 23px;
+                            height: 26px;
+                            a{
+                                @include ac();
+                                color: $black;
+                                padding: 0 3px;
+                                width: $b100;
+                                height: $b100;
+                                border-bottom: 2px solid $transparent;
+                            }
+                        }
+                    }
+                }
+                .rig{
+                    flex: $yi;
+                    display: $flex;
+                    align-items: $center;
+                    justify-content: space-between;
+                    #ssuo{
+                        margin-left:200px;
+                        border-bottom: 1px solid $transparent;
+                        display: $flex;
+                        input{
+                            width: 25px;
+                            display: $block;
+                            visibility: hidden;
+                            outline: $none;
+                            border: $none;
+                        }
+                        a{
+                            @include ac();
+                            
+                            span{
+                                color: #666;
+                                font-size: 16px;
+                                font-weight: 900;
+                            }
+                            width: 25px;
+                            text-align: $center;
+                            line-height: 25px;
+                            height: 25px;
+                        }
+                    }
+                    .ren{
+                        margin-left: 20px;
+                        font-size: 16px;
+                        font-weight: 900;
+                        text-align: right;
+                    }
+                    .bao{
+                        margin-left: 20px;
+                        font-size: 16px;
+                        text-align: right;
+                        font-weight: 900;
+                    }
+                    a{
+                        @include ac();
+                        color: #666;
+                        width: 25px;
+                        height: 25px;
+                        text-align: $center;
+                        line-height: 25px;
+                        &:last-child{
+                            width: 56px;
+                            text-align: right;
+                            color:$black;
+                        }
+                    }
+                }
+            }
+        }
+
+        .fot_wp{
+            &:after{
+                @include clean();
+            }
+            background: #f9ece1;
+            display: $flex;
+            justify-content: $center;
+            .inner{
+                width: 1200px;
+                height: 628px;
+                padding-top: 80px;
+                display: $flex;
+                flex-direction: $column;
+                .above{
+                    width: $b100;
+                    height: 217px;
+                    display: $flex;
+                    justify-content: $spbtn;
+                    align-items: $center;
+                    ul{
+                        margin: 0;
+                        padding: 0;
+                        height: $b100;
+                        display: $flex;
+                        li{
+                            width: 153px;
+                            span{
+                                display: $block;
+                                padding-bottom: 23px;
+                                font-weight: 900;
+                            }        
+                            a{
+                                height: 34.5px;
+                                display: $block;
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+                .mid{
+                    width: $b100;
+                    height: 101px;
+                    padding-top: 45px;
+                    div{
+                        height: 40px;
+                        a{
+                            font-size: 12px;
+                            color: #666;
+                            &:hover{
+                                color: #000;
+                            }
+                        }
+                        span{
+                            color: #666;
+                            font-size: 12px;
+                        }
+                    }
+                    p{
+                        font-size: 12px;
+                        line-height: $yi;
+                        color: #666;
+                    }
+                }
+                .down{
+                    flex: $yi;
+                    display: $flex;
+                    flex-direction: $column;
+                    // justify-content: $spbtn;
+                    .leg{
+                        display: $block;
+                        height: 25px;
+                        color: #666;
+                        &:hover{
+                            color: #000;
+                        }
+                        padding-top: 10px;
+                    }
+                    .fot{
+                        height: 50px;
+                        overflow: $hidden;
+                        .nav{
+                            @include qul();
+                            width: $b100;
+                            margin-top: 10px;
+                            height: 100px;
+                            li{
+                                height: 25px;
+                                width: $b100;
+                                display: $flex;
+                                a{
+                                    @include qul();
+                                    display: $block;
+                                    padding-right: 10px;
+                                    text-align: left;
+                                    font-size: 12px;
+                                    background: $transparent;
+                                    color: #666;
+                                    &:hover{
+                                        text-decoration:underline;
+                                        color: $black;
+                                    }
+                                }
+                            }
+                            // justify-content: $spbtn;
+                        }
+                    }
+                    .ft{
+                        
+                        padding: 25px 0 90px;
+                        flex: $yi;
+                        width: $b100;
+                        display: $flex;
+                        a{
+                            display: $block;
+                            text-decoration: $none;
+                            height: 33px;
+                            text-align: left;
+                            &:last-child{
+                                position: relative;
+                                span{
+                                    color: #001b75;
+                                    font-size: 8px;
+                                    display: $block;
+                                    width: 60px;
+                                    line-height: 1;
+                                    position: absolute;
+                                    transform: scaleX(.7);
+                                    bottom: 3px;
+                                    right: 15px;
+                                }
+                            }
+                        }
+                        img{
+                            @include qul();
+                            height: 33px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------
+.fixed{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    z-index: 100;
+    background-position:0 -40px;
+    overflow: hidden;
+    background: url(http://img.zbird.cn/ww3/header/s_totop.jpg);
+    cursor: pointer;
+    &:hover{
+        background-position: 40px -40px;
+    }
+}

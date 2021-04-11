@@ -1,0 +1,51 @@
+$r100:100px;
+$spbtn:space-between;
+$b100:100%;
+$block:block;
+$left:left;
+$right:right;
+$both:both;
+$hidden:hidden;
+$zero:0;
+$yi:1;
+$absolute:absolute;
+$flex:flex;
+$start:start;
+$end:end;
+$column:column;
+$center:center;
+$none:none;
+// color
+$transparent:transparent;
+$white:#fff;
+$pink:pink;
+$black:black;
+@mixin qul{
+    margin: 0;
+    padding: 0;
+}
+@mixin clean {
+    content: '.';
+    clear: $both;
+    display: $block;
+    height:$zero;
+    overflow: $hidden;
+    visibility: $hidden;
+}
+li{
+    list-style: $none;
+}
+@mixin ac {
+    display: $block;
+    text-decoration: $none;
+}
+
+.mid_wp{
+    &:after{
+        @include clean();
+    }
+    background: $pink;
+    flex: $yi;
+    display: $flex;
+    justify-content: $center;
+}

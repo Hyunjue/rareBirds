@@ -1,21 +1,74 @@
-html {
-  height: 100%; }
-  html body {
-    height: 100%; }
-    html body .top_wp {
-      border-top: 5px solid #efd8d2;
-      background: #fff;
-      width: 100%; }
-      html body .top_wp:after {
-        content: '.';
-        clear: both;
-        display: block;
-        height: 0;
-        overflow: hidden;
-        visibility: hidden; }
-      html body .top_wp .trq {
-        height: 72px;
+li {
+  list-style: none; }
+
+.mid_wp {
+  background: pink;
+  flex: 1;
+  display: flex;
+  justify-content: center; }
+  .mid_wp:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden; }
+  .mid_wp .inner {
+    width: 1200px; }
+    .mid_wp .inner::after {
+      content: '.';
+      clear: both;
+      display: block;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden; }
+    .mid_wp .inner .t_ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+      height: 666px;
+      position: relative;
+      display: flex;
+      justify-content: center; }
+      .mid_wp .inner .t_ul > li {
         width: 100%;
-        background: pink; }
-        html body .top_wp .trq .thang {
-          height: 100px; }
+        height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center; }
+        .mid_wp .inner .t_ul > li a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center; }
+          .mid_wp .inner .t_ul > li a img {
+            cursor: pointer; }
+      .mid_wp .inner .t_ul .dot {
+        margin: 0;
+        padding: 0;
+        width: 54px;
+        height: 8px;
+        position: absolute;
+        z-index: 50;
+        bottom: 32px;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .mid_wp .inner .t_ul .dot > li {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: white; }
+        .mid_wp .inner .t_ul .dot .banner_btn {
+          background: #f09276; }
+    .mid_wp .inner .search {
+      width: 100%;
+      height: 300px;
+      background: gray; }
+    .mid_wp .inner .showpic {
+      width: 100%;
+      height: 1700px;
+      background: gold; }
