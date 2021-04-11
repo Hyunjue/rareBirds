@@ -235,3 +235,27 @@ html {
   cursor: pointer; }
   .fixed:hover {
     background-position: 40px -40px; }
+
+.h_box {
+  height: 492px;
+  width: 100%;
+  display: none;
+  background: gold;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  z-index: 10; }
+  .h_box .greybg {
+    background: url(../images/greybg.png) repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    z-index: 105; }
+  .h_box .child_b {
+    width: 1200px;
+    height: 454px;
+    margin-left: auto;
+    margin-right: auto;
+    background: blue; }
