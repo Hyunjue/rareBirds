@@ -12,11 +12,36 @@
     <link rel="stylesheet" href="./css/common.css">
     <script src="./js/jquery.min.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/login.js"></script>
 </head>
 
 <body>
     @@include('./common/header.html')
-    <section class="mid_wp"></section>
+    <section class="mid_wp">
+        <div class="inner">
+            <img src="./images/giftbg.jpg" alt="">
+            <div class="dlbox">
+                <div class="th"><span>注册登录</span><span>密码登录</span></div>
+                <div class="formbox">
+                    <input type="text" placeholder="请输入手机号">
+                    <input type="text" placeholder="请输入数字">
+                    <div class="yanzm"></div>
+                    <input type="text" placeholder="验证码">
+                    <button class="huoqu">获取验证码</button>
+                    <button class="dlbtn">登录</button>
+                </div>
+                <div class="dlpage">
+                    <input type="text" placeholder="手机号/邮箱">
+                    <input type="text" placeholder="密码">
+                    <input type="checkbox" class="checkbox"><span class="mima"><a href="#">忘记密码？</a></span>
+                    <button class="dlbtn">登录</button>
+                    <span class="iconfont icon-weixing"></span><span class="weixin">微信登录 </span>
+                    <div class="shu" style="background: #d9d9d9;width: 1px;height: 20px;"></div>
+                    <span class="iconfont icon-QQ"></span><span class="qq">QQ登录</span>
+                </div>
+            </div>
+        </div>
+    </section>
     @@include('./common/footer.html')
 </body>
 

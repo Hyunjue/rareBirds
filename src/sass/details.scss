@@ -48,4 +48,37 @@ li{
     flex: $yi;
     display: $flex;
     justify-content: $center;
+    .inner{
+        width: 1200px;
+        display: $flex;
+        flex-direction: $column;
+        align-items: $center;
+        .rareshow{
+            height: 505px;
+            width: $b100;
+            background-color: moccasin;
+        }
+        .topword{
+            width: $b100;
+            height: 90px;
+            line-height: 90px;
+            display: $flex;
+            align-items: $center;
+            align-self: start;
+            .xie{
+                display: block;
+                // background: red;
+                margin-top: 4px;
+                font-size: 18px;
+                text-align: center;
+                line-height: 90px;
+            }
+            a{
+                    font-size: 14px;
+                    color: #000;
+                    text-decoration: $none;
+            }
+            
+        }
+    }
 }

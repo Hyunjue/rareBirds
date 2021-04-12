@@ -319,11 +319,12 @@ html{
     height: 492px;
     width: $b100;
     display: $none;
-    background: gold;
+    background: rgb(255, 255, 255);
     position: $absolute;
     top: 72px;
     left: 0;
     z-index: 10;
+    &:nth-child(2)
     .greybg{
         background: url(../images/greybg.png) repeat;
         position: $absolute;
@@ -338,7 +339,115 @@ html{
         height: 454px;
         margin-left: $auto;
         margin-right: $auto;
-        // display: $none;
-        background: blue;
+        display: $none;
+        background: rgb(255, 255, 255);
+        display: $flex;
+        justify-content: $spbtn;
+       &:nth-child(3){
+           background: rgb(255, 255, 255);
+           & > div:nth-child(2){
+                & > a{
+                    width: 127px;
+                }
+           }
+       }
+       &:nth-child(4){
+            background: rgb(255, 255, 255);
+            & > div:nth-child(2){
+                flex-direction: $column;
+                & > a{
+                    width: 127px;
+                }
+            }
+       }
+       &:nth-child(5){
+            background: rgb(255, 255, 255);
+            & > div:nth-child(2){
+                flex-direction: $column;
+                & > a{
+                    width: 127px;
+                }
+            }
+        }
+        &:nth-child(6){
+            background: rgb(255, 255, 255);
+            & > div:nth-child(2){
+                flex-direction: $column;
+                & > a{
+                    width: 127px;
+                }
+            }
+        }
+        &:nth-child(7){
+            background: rgb(255, 255, 255);
+            & > div:nth-child(2){
+                flex-direction: $column;
+                & > a{
+                    width: 127px;
+                }
+            }
+        }
+        div{
+            display: $flex;
+            flex-direction: $column;
+            padding-top: 70px;
+            &:first-child{
+                width: 215px;
+
+            }
+            &:nth-child(2){
+                width: 220px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                span{
+                    width: $b100;
+                    flex-shrink: 0;
+                }
+                & > a{
+                    flex-shrink: 0;
+                    display: $flex;
+                    align-items: $center;
+                
+                    width: 99px;
+                    img{
+                        margin-right: 15px;
+                        width: 32px;
+                        height: 26px;
+                    }
+                    &:nth-child(6),&:nth-child(7),&:nth-child(8),&:nth-child(9){
+                        width: 127px;
+                    }
+                }
+            }
+            &:nth-child(3){
+                width: 184px;
+            }
+            &:last-child{
+                a{
+                    text-decoration: $none;
+                    display: $flex;
+                    flex-direction: $column;
+                    img{
+                        display: $block;
+                        border: $none;
+                    }
+                    span{
+                        display: $block;
+                    }
+                }
+            }
+           & > a{
+                height: 48px;
+                line-height: 48px;
+                display: $block;
+                color: #000;
+            }
+           & > span{
+                height: 48px;
+                line-height: 48px;
+                display: block;
+                color: #000;
+            }
+        }
     }
 }

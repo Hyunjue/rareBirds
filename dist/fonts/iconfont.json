@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1278388",
+      "name": "weixing",
+      "font_class": "weixing",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "4608988",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
       "icon_id": "7550270",
       "name": "购物",
       "font_class": "gouwu",
