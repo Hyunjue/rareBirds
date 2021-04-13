@@ -1,3 +1,4 @@
+@charset "UTF-8";
 li {
   list-style: none; }
 
@@ -164,3 +165,141 @@ li {
           margin: 0;
           padding: 0;
           border: none; }
+    .mid_wp .inner .morerare {
+      width: 100%;
+      margin-top: 75px; }
+      .mid_wp .inner .morerare h2 {
+        height: 72px;
+        line-height: 72px;
+        text-align: center;
+        font-size: 30px;
+        font-family: "宋体";
+        color: #000;
+        margin-bottom: 40px;
+        font-weight: normal; }
+      .mid_wp .inner .morerare .morepic {
+        padding: 0 150px;
+        width: 100%;
+        height: 74px;
+        background: url(../images/dia_bg.jpg) no-repeat;
+        background-position: center;
+        display: flex;
+        justify-content: space-between; }
+        .mid_wp .inner .morerare .morepic a {
+          flex: 1;
+          height: 100%; }
+    .mid_wp .inner .hunjbg {
+      width: 100%;
+      margin-top: 75px;
+      height: 533px;
+      background: url(../images/hunjbg.jpg) no-repeat;
+      background-position: center;
+      display: flex;
+      justify-content: center; }
+      .mid_wp .inner .hunjbg div {
+        width: 270px;
+        height: 50px;
+        background: #f1dad4;
+        text-align: center;
+        line-height: 50px;
+        margin-top: 362px; }
+        .mid_wp .inner .hunjbg div:first-child {
+          margin-right: 20px; }
+        .mid_wp .inner .hunjbg div:last-child {
+          margin-left: 20px; }
+        .mid_wp .inner .hunjbg div a {
+          color: #000;
+          font-size: 14px; }
+    .mid_wp .inner .dujia {
+      width: 100%;
+      height: 1040px;
+      margin-top: 75px; }
+      .mid_wp .inner .dujia .djbg {
+        height: 193px;
+        height: 86px;
+        background: url(../images/dujiabg.jpg) no-repeat;
+        background-position: center;
+        margin-bottom: 65px; }
+      .mid_wp .inner .dujia .djshow {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; }
+        .mid_wp .inner .dujia .djshow div {
+          border-top: 1px solid #000;
+          width: 571px;
+          height: 414px;
+          background: coral; }
+          .mid_wp .inner .dujia .djshow div div {
+            width: 254px;
+            height: 45px;
+            margin: 15px 0 14px; }
+            .mid_wp .inner .dujia .djshow div div a {
+              display: block;
+              width: 100%;
+              height: 100%; }
+          .mid_wp .inner .dujia .djshow div .djt1 {
+            background: url(../images/dj1.jpg) no-repeat; }
+          .mid_wp .inner .dujia .djshow div .djt2 {
+            background: url(../images/dj2.jpg) no-repeat; }
+          .mid_wp .inner .dujia .djshow div .djt3 {
+            background: url(../images/dj3.jpg) no-repeat; }
+          .mid_wp .inner .dujia .djshow div .djt4 {
+            background: url(../images/dj4.jpg) no-repeat; }
+          .mid_wp .inner .dujia .djshow div:last-child, .mid_wp .inner .dujia .djshow div:nth-child(3) {
+            margin-top: 30px; }
+          .mid_wp .inner .dujia .djshow div p {
+            height: 70px;
+            line-height: 70px;
+            text-align: left;
+            margin: 0;
+            padding: 0; }
+            .mid_wp .inner .dujia .djshow div p a {
+              font-size: 14px;
+              color: #000; }
+    .mid_wp .inner .tradition {
+      width: 100%;
+      height: 639px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .mid_wp .inner .tradition h2 {
+        height: 72px;
+        line-height: 72px;
+        text-align: center;
+        font-size: 30px;
+        font-family: "宋体";
+        color: #000;
+        margin-bottom: 40px;
+        font-weight: normal; }
+      .mid_wp .inner .tradition .tradi_lunbo {
+        width: 100%;
+        height: 372px;
+        background: white; }
+
+.tradi_lunbo .swiper-container {
+  width: 100%;
+  height: 100%; }
+
+.tradi_lunbo .swiper-button-next::after, .tradi_lunbo .swiper-button-prev::after {
+  color: #000;
+  font-size: 25px; }
+
+.tradi_lunbo .swiper-slide {
+  height: 100%;
+  width: 373px;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }

@@ -23,24 +23,68 @@
             <div class="dlbox">
                 <div class="th"><span>注册登录</span><span>密码登录</span></div>
                 <div class="formbox">
-                    <input type="text" placeholder="请输入手机号">
-                    <input type="text" placeholder="请输入数字">
+                    <input class="tel" type="text" placeholder="请输入手机号">
+                    <input class="rdnum" type="text" placeholder="请输入数字">
                     <div class="yanzm"></div>
                     <input type="text" placeholder="验证码">
                     <button class="huoqu">获取验证码</button>
-                    <button class="dlbtn">登录</button>
+                    <button class="dlbtn zc">注册</button>
                 </div>
+                <script>
+                    let btn = document.querySelector('.huoqu');
+                    // 定义剩下的秒数
+                    let time = 60;
+                    // 注册事件
+                    btn.addEventListener('click', function () {
+
+                        btn.disabled = true;
+                        btn.style.background = "#dedede";
+                        btn.style.color = "green";
+                        // 开启定时器
+                        let timer = setInterval(function () {
+                            // 判断剩余秒数
+                            if (time == 0) {
+                                // 清除定时器和复原按钮
+                                clearInterval(timer);
+                                btn.disabled = false;
+                                btn.innerHTML = '获取验证码';
+                                btn.style.background = "#f0d9d3";
+                                btn.style.color = "#000";
+                            } else {
+                                btn.innerHTML = '还剩下' + time + '秒';
+                                time--;
+                            }
+                        }, 1000);
+                    });
+                </script>
                 <div class="dlpage">
                     <input type="text" placeholder="手机号/邮箱">
                     <input type="text" placeholder="密码">
                     <input type="checkbox" class="checkbox"><span class="mima"><a href="#">忘记密码？</a></span>
-                    <button class="dlbtn">登录</button>
+                    <button class="dlbtn dl">登录</button>
                     <span class="iconfont icon-weixing"></span><span class="weixin">微信登录 </span>
                     <div class="shu" style="background: #d9d9d9;width: 1px;height: 20px;"></div>
                     <span class="iconfont icon-QQ"></span><span class="qq">QQ登录</span>
                 </div>
             </div>
         </div>
+        <script>
+            function rdm() {
+                let chars = '0123456789';
+                let maxPos = chars.length;
+                let code = '';
+                for (let i = 0; i < 6; i++) {
+                    code += chars.charAt(Math.floor(Math.random() * maxPos));
+                }
+                return code;    //直接转换为小写
+            }
+            let yanzm = document.querySelector(".yanzm");
+            var rd = rdm();
+            yanzm.innerHTML = rd;
+            yanzm.onclick = function () {
+                yanzm.innerHTML = rdm();
+            }
+        </script>
     </section>
     @@include('./common/footer.html')
 </body>

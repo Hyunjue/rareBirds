@@ -221,5 +221,176 @@ li{
                 }
             }
         }
+        
+        .morerare{
+            width: $b100;
+            margin-top: 75px;
+            h2{
+                height: 72px;
+                line-height: 72px;
+                text-align: center;
+                font-size: 30px;
+                font-family: "宋体";
+                color: #000;
+                margin-bottom: 40px;
+                font-weight: normal;
+            }
+            .morepic{
+                padding: 0 150px;
+                width: $b100;
+                height: 74px;
+                background: url(../images/dia_bg.jpg) no-repeat;
+                background-position: center;
+                display: $flex;
+                justify-content: $spbtn;
+                a{
+                    flex: $yi;
+                    height: $b100;
+                }
+            }
+        }
+
+        .hunjbg{
+            width: $b100;
+            margin-top: 75px;
+            height: 533px;
+            background: url(../images/hunjbg.jpg) no-repeat;
+            background-position: center;
+            display: $flex;
+            justify-content: $center;
+            div{
+                &:first-child{
+                    margin-right: 20px;
+                }
+                &:last-child{
+                    margin-left: 20px;
+                }
+                width: 270px;
+                height: 50px;
+                background: #f1dad4;
+                text-align: center;
+                line-height: 50px;
+                margin-top: 362px;
+                a{
+                    color: #000;
+                    font-size: 14px;
+                }
+            }
+        }
+        .dujia{
+            width: $b100;
+            height: 1040px;
+            margin-top: 75px;
+            .djbg{
+                height: 193px;
+                height: 86px;
+                background: url(../images/dujiabg.jpg) no-repeat;
+                background-position: $center;
+                margin-bottom: 65px;
+            }
+            .djshow{
+                width: $b100;
+                display: $flex;
+                justify-content: $spbtn;
+                flex-wrap: wrap;
+                div{
+                    border-top: 1px solid #000;
+                    width: 571px;
+                    height: 414px;
+                    background: coral;
+                    div{
+                        width: 254px;
+                        height: 45px;
+                        margin: 15px 0 14px;
+                        a{
+                            display: block;
+                            width: $b100;
+                            height: $b100;
+                        }
+                    }
+                    .djt1{
+                        background: url(../images/dj1.jpg) no-repeat;
+                    }
+                    .djt2{
+                        background: url(../images/dj2.jpg) no-repeat;
+
+                    }
+                    .djt3{
+                        background: url(../images/dj3.jpg) no-repeat;
+                    }
+                    .djt4{
+                        background: url(../images/dj4.jpg) no-repeat;
+
+                    }
+                    &:last-child,&:nth-child(3){
+                        margin-top: 30px;
+                    }
+                    p{
+                        height: 70px;
+                        line-height: 70px;
+                        text-align: left;
+                        @include qul();
+                        a{
+                            font-size: 14px;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+        .tradition{
+            width: $b100;
+            height: 639px;
+            display: $flex;
+            flex-direction: $column;
+            align-items: $center;
+            h2{
+                height: 72px;
+                line-height: 72px;
+                text-align: center;
+                font-size: 30px;
+                font-family: "宋体";
+                color: #000;
+                margin-bottom: 40px;
+                font-weight: normal; 
+            }
+            .tradi_lunbo{
+                width: $b100;
+                height: 372px;
+                background: rgb(255, 255, 255);
+            }
+        }
+
+    }
+}
+
+// 经典块轮播图
+.tradi_lunbo{
+.swiper-container{
+    width: $b100;
+    height: $b100;
+}
+.swiper-button-next::after,.swiper-button-prev::after{
+    color: #000;
+    font-size: 25px;
+}
+    .swiper-slide {
+        height: $b100;
+        width: 373px;
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
     }
 }

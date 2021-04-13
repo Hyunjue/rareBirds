@@ -1,8 +1,9 @@
+@charset "UTF-8";
 li {
   list-style: none; }
 
 .mid_wp {
-  background: pink;
+  background: #fff;
   flex: 1;
   display: flex;
   justify-content: center; }
@@ -19,9 +20,39 @@ li {
     flex-direction: column;
     align-items: center; }
     .mid_wp .inner .rareshow {
-      height: 505px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 575px;
       width: 100%;
-      background-color: moccasin; }
+      background: white; }
+      .mid_wp .inner .rareshow .top {
+        height: 79px;
+        width: 1180px;
+        background: url(../images/detibg.jpg) no-repeat;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .mid_wp .inner .rareshow .top span {
+          font-size: 18px;
+          color: #000;
+          font-family: "宋体"; }
+          .mid_wp .inner .rareshow .top span:first-child {
+            margin-left: 20px; }
+          .mid_wp .inner .rareshow .top span:nth-child(2) {
+            margin-right: -5px; }
+          .mid_wp .inner .rareshow .top span:last-child {
+            display: block;
+            width: 393px;
+            text-indent: 15px;
+            text-align: left; }
+      .mid_wp .inner .rareshow .dow {
+        width: 1180px;
+        height: 575px;
+        background: white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; }
     .mid_wp .inner .topword {
       width: 100%;
       height: 90px;
@@ -39,3 +70,62 @@ li {
         font-size: 14px;
         color: #000;
         text-decoration: none; }
+
+.bigbox {
+  width: 400px;
+  height: 400px;
+  background: white;
+  margin: 25px 57.5px 0; }
+  .bigbox a {
+    outline: none;
+    text-decoration: none; }
+    .bigbox a img {
+      border: none;
+      width: 100%;
+      height: 100%; }
+
+.infobox {
+  width: 535px;
+  height: 345px;
+  margin-top: 18px;
+  background: #30dce2; }
+
+.libox {
+  width: 300px;
+  height: 62px;
+  background: white;
+  margin: 3px 57.5px;
+  margin-left: 107.5px;
+  display: flex;
+  justify-content: space-between; }
+  .libox > div {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #dfdede;
+    background: white; }
+    .libox > div:first-child {
+      border-color: #000; }
+    .libox > div img {
+      width: 100%;
+      height: 100%; }
+
+.tip {
+  width: 477px;
+  height: 40px;
+  background: white;
+  display: flex; }
+  .tip button {
+    display: block;
+    width: 188px;
+    height: 33px;
+    font-size: 12px;
+    color: #fff;
+    background: #fdb2a4;
+    outline: none;
+    border: none;
+    margin-top: 30px; }
+  .tip p {
+    font-size: 12px;
+    color: #999;
+    margin-top: 30px;
+    padding-left: 10px; }

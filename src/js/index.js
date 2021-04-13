@@ -55,5 +55,4 @@
     });
     /*  当鼠标进入轮播图时清除定时器，移出时启动定时器 */
     $(".t_ul>li").hover(function () { clearInterval(time) }, function () { autoplay() });
-
 });

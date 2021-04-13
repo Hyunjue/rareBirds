@@ -63,7 +63,11 @@ li {
         margin-top: 20px;
         margin-right: 6px;
         border-left: none;
-        background: #fff; }
+        background: #fff;
+        text-align: center;
+        color: #fff;
+        line-height: 46px;
+        background: #b8b6b6; }
       .mid_wp .inner .dlbox .huoqu {
         width: 158px;
         height: 46px;
