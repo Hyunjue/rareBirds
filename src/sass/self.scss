@@ -48,4 +48,21 @@ li{
     flex: $yi;
     display: $flex;
     justify-content: $center;
+    .inner{
+        width: 1200px;
+        height: 800px;
+        background: gold;
+        p{
+            width: 100px;
+            height: 100px;
+            display: $flex;
+            background: red;
+            align-items: $center;
+            justify-content: $center;
+            a{
+                font-size: 22px;
+                color: #000fff;
+            }
+        }
+    }
 }

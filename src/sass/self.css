@@ -17,3 +17,23 @@ li {
   overflow: hidden;
   visibility: hidden;
 }
+
+.mid_wp .inner {
+  width: 1200px;
+  height: 800px;
+  background: gold;
+}
+
+.mid_wp .inner p {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  background: red;
+  align-items: center;
+  justify-content: center;
+}
+
+.mid_wp .inner p a {
+  font-size: 22px;
+  color: #000fff;
+}
