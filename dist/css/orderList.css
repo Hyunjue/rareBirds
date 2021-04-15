@@ -13,3 +13,97 @@ li {
     height: 0;
     overflow: hidden;
     visibility: hidden; }
+  .mid_wp .inner {
+    width: 1200px;
+    height: 700px;
+    background: cyan; }
+    .mid_wp .inner .count {
+      width: 100%;
+      height: 50px;
+      border-top: 1px solid #000;
+      background: grey;
+      display: flex;
+      justify-content: space-between; }
+      .mid_wp .inner .count .l {
+        width: 220px;
+        display: flex;
+        align-items: center; }
+        .mid_wp .inner .count .l div {
+          text-decoration: underline #000;
+          display: inline-block; }
+          .mid_wp .inner .count .l div:first-child {
+            margin-right: 8px; }
+          .mid_wp .inner .count .l div:last-child {
+            margin-left: 8px; }
+      .mid_wp .inner .count .r {
+        background: white;
+        width: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .mid_wp .inner .count .r div {
+          display: inline-block; }
+        .mid_wp .inner .count .r span {
+          display: block;
+          background: yellowgreen;
+          width: 100px;
+          height: 50px;
+          text-align: center;
+          line-height: 50px;
+          color: #000;
+          font-size: 14px; }
+    .mid_wp .inner .tit {
+      width: 100%;
+      height: 80px;
+      background: #999;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+    .mid_wp .inner .box {
+      width: 1200px;
+      height: 150px;
+      background-color: gold;
+      display: flex; }
+      .mid_wp .inner .box div {
+        width: 300px;
+        height: 100%;
+        line-height: 150px;
+        text-align: center; }
+    .mid_wp .inner button {
+      margin-top: 25px;
+      outline: none;
+      border: none;
+      width: 200px;
+      height: 50px;
+      background: #000;
+      color: #fff;
+      font-size: 14px;
+      float: right; }
+      .mid_wp .inner button a {
+        color: white;
+        text-decoration: none; }
+
+.box .lef {
+  background-color: pink;
+  display: flex;
+  align-items: center; }
+  .box .lef img {
+    width: 100px;
+    height: 100px; }
+  .box .lef span {
+    flex: 1;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background: cadetblue; }
+
+.box .mid {
+  background: #913a3a;
+  line-height: 150px;
+  text-align: center; }
+
+.box .rig {
+  background: chocolate; }
+
+.dele a {
+  color: #000; }

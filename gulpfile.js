@@ -25,6 +25,14 @@ gulp.task("indexhtml", done => {
         .pipe(connect.reload());
     done();
 });
+// copy 发布商品
+gulp.task("cUpload", done => {
+    console.log("successful!");
+    gulp.src("./src/upload/*")
+        .pipe(gulp.dest("dist/upload"))
+        .pipe(connect.reload());
+    done();
+})
 // copy分页
 gulp.task("copyhtml", done => {
     gulp.src(["./src/*.html", "!./src/index.html"])
@@ -78,7 +86,8 @@ gulp.task("watch", done => {
     gulp.watch("./src/fonts/*", gulp.series("fonts"));
     gulp.watch("./src/images/*", gulp.series("cimg"));
     gulp.watch("./src/common/*.html", gulp.parallel("copyhtml", "indexhtml"));
+    gulp.watch("./src/upload/*", gulp.series("cUpload"));
     done();
 });
-gulp.task("tasks", gulp.parallel('fonts', 'cimg', 'cjs', 'bootstrap', 'scss', 'indexhtml', 'copyhtml'));
+gulp.task("tasks", gulp.parallel('cUpload', 'fonts', 'cimg', 'cjs', 'bootstrap', 'scss', 'indexhtml', 'copyhtml'));
 gulp.task("default", gulp.parallel("tasks", "watch", "server"));

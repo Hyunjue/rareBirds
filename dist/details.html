@@ -13,6 +13,7 @@
     <script src="./js/jquery.min.js"></script>
     <script src="./js/details.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/jquery_cookie.js"></script>
 </head>
 
 <body>
@@ -274,7 +275,27 @@
                     <div class="bigbox">
                         <a href="#"><img src="./images/delipic1.jpg" alt=""></a>
                     </div>
-                    <div class="infobox"></div>
+                    <div class="infobox">
+                        <div class="minus">一</div>
+                        <input class="pnum" type="text">
+                        <div class="add">十</div>
+                    </div>
+                    <script>
+                        let jia = document.querySelector(".add");
+                        let jian = document.querySelector(".minus");
+                        let val1 = document.querySelector(".pnum");
+                        console.log(val1);
+                        jia.onclick = function () {
+                            console.log("dddd")
+                            val1.value++;
+                        }
+                        jian.onclick = function () {
+                            val1.value--;
+                            if (val1.value == 0) {
+                                val1.value = 1;
+                            }
+                        }
+                    </script>
                     <div class="libox">
                         <div><img src="./images/delipic1.jpg" alt=""></div>
                         <div><img src="./images/delipic2.jpg" alt=""></div>
@@ -282,7 +303,7 @@
                         <div><img src="./images/delipic4.jpg" alt=""></div>
                     </div>
                     <div class="tip">
-                        <button>选定此款，去选钻</button>
+                        <button class="sche" style="font-weight: 900;">加入购物车</button>
                         <p>提示：提示：款式最终价格是根据，材质、钻石大小定价。
                             如有疑问请咨询客服。</p>
                     </div>

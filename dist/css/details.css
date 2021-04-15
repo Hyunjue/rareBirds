@@ -88,7 +88,25 @@ li {
   width: 535px;
   height: 345px;
   margin-top: 18px;
-  background: #30dce2; }
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .infobox input {
+    outline: none;
+    display: block;
+    width: 150px;
+    height: 70px;
+    font-size: 56px; }
+  .infobox .minus, .infobox .add {
+    font: '宋体';
+    font-size: 50px;
+    color: white;
+    font-weight: 700;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px; }
 
 .libox {
   width: 300px;

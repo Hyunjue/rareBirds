@@ -55,4 +55,42 @@
     });
     /*  当鼠标进入轮播图时清除定时器，移出时启动定时器 */
     $(".t_ul>li").hover(function () { clearInterval(time) }, function () { autoplay() });
+
+
+
+
+
+    // 购物车
+    $.ajax({
+        type: "get",
+        url: 'http://jx.xuzhixiang.top/ap/api/productlist.php',
+        async: false,
+        data: { uid: '51181' },
+        contentType: "application/json",
+        success: function (res) {
+            console.log(res);
+            let pid1 = res.data[0].pid;
+            let pid2 = res.data[1].pid;
+            let pid3 = res.data[2].pid;
+            let pname = res.data.pname;
+            let psrc = res.data.pimg;
+            let pinfo = res.data.pdesc;
+            $(".djt1").prop('data-id', pid1);
+            $(".djt2").prop('data-id', pid2);
+            $(".djt3").prop('data-id', pid3);
+            $(".djt1").on("click", function () {
+                $.cookie("thePid", $(this).prop("data-id"));
+                $(location).attr("href", "./details.html");
+            })
+            $(".djt2").on("click", function () {
+                $.cookie("thePid", $(this).prop("data-id"));
+                $(location).attr("href", "./details.html");
+            })
+            $(".djt3").on("click", function () {
+                $.cookie("thePid", $(this).prop("data-id"));
+                $(location).attr("href", "./details.html");
+            })
+        }
+    });
+
 });

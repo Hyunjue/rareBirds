@@ -48,4 +48,124 @@ li{
     flex: $yi;
     display: $flex;
     justify-content: $center;
+    .inner{
+        width: 1200px;
+        height: 700px;
+        background: cyan;
+        .count{
+            width: $b100;
+            height: 50px;
+            border-top: 1px solid #000;
+            background: grey;
+            display: $flex;
+            justify-content: space-between;
+            .l{
+                width: 220px;
+                display: $flex;
+                align-items: $center;
+                div{
+                    &:first-child{
+                        margin-right: 8px;
+
+                    }
+                    &:last-child{
+                        margin-left: 8px;
+                    }
+                    text-decoration:underline #000;
+                    // border-bottom: 1px solid #000;        
+                    display: inline-block;
+                }
+            }
+            .r{
+                background: white;
+                width: 450px;
+                display: $flex;
+                align-items: $center;
+                justify-content: $center;
+                div{
+                    display: inline-block;
+                   
+            }
+            span{
+                display: block;
+                background: yellowgreen;
+                width: 100px;
+                height: 50px;
+                text-align: $center;
+                line-height: 50px;
+                color: #000;
+                font-size: 14px;
+            }
+        }
+        }
+        .tit{
+            width: $b100;
+            height: 80px;
+            background: #999;
+            display: flex;
+            justify-content: space-around;
+            align-items: $center;
+
+        }
+        .box{
+            width: 1200px;
+            height: 150px;
+            background-color: gold;
+            display: flex;
+            div{
+                width: 300px;
+                height: $b100;
+                
+    line-height: 150px;
+    text-align: center;
+            }
+        }
+        button{
+            margin-top: 25px;
+            outline: $none;
+            border: $none;
+            width: 200px;
+            height: 50px;
+            background: #000;
+            color: #fff;
+            font-size: 14px;
+            float: right;
+            a{
+                color: white;
+                text-decoration: $none;
+            }
+        }
+    }
+}
+.box .lef{
+
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    img{
+        width: 100px;
+        height: 100px;
+    }
+    span{
+    flex: 1;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background: cadetblue;    
+    }
+}
+.box .mid{
+
+    background: rgb(145, 58, 58);
+    line-height: 150px;
+    text-align: center;
+}
+.box .rig{
+   
+    background: chocolate;
+}
+.dele{
+    a{
+        color: #000;
+    }
 }

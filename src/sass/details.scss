@@ -137,7 +137,24 @@ li{
     width: 535px;
     height: 345px;
     margin-top: 18px;
-    background: rgb(48, 220, 226);
+    background: rgb(0, 0, 0);
+    display: $flex;
+    align-items: $center;
+    justify-content: $center;
+    input{
+        outline: $none;
+        display: block;
+        width: 150px;
+        height: 70px;
+        font-size: 56px;
+    }
+    .minus,.add{
+        font: '宋体';font-size: 50px;color: white;font-weight: 700;
+        width: 100px;
+        height: 100px;
+        text-align: $center;
+        line-height: 100px;
+    }
 }
 .libox{
     width: 300px;

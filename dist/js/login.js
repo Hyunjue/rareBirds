@@ -1,9 +1,11 @@
 $(function () {
     let tTel = $.cookie('theTel');
+    console.log($.cookie("theToken"));
     // 注册，发送请求
     $.ajax({
         type: "get",
         url: 'http://jx.xuzhixiang.top/ap/api/login.php',
+        async: false,
         data: { username: 'xianjue', password: '111111' },
         contentType: "application/json",
         success: function (res) {
