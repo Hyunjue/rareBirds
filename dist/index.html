@@ -18,6 +18,118 @@
 	<script src="./js/common.js"></script>
 	<script src="./js/index.js"></script>
 	<script src="./js/jquery_cookie.js"></script>
+	<style>
+		ul,
+		li {
+			margin: 0;
+			padding: 0;
+		}
+
+		img {
+			display: block;
+			border: none;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		.sliderBox {
+			position: relative;
+			width: 100%;
+			height: 270px;
+			overflow: hidden;
+		}
+
+		.sliderList {
+			position: absolute;
+		}
+
+		.sliderList>li {
+			width: 900px;
+			height: 300px;
+			float: left;
+		}
+
+		.sliderList>img {
+			width: 900px;
+			height: 300px;
+		}
+
+		.dian {
+			position: absolute;
+			right: 50%;
+			transform: translateX(50%);
+			bottom: 10px;
+		}
+
+		.dian>li {
+			float: left;
+			margin: 10px;
+			width: 10px;
+			height: 10px;
+			background-color: white;
+			color: red;
+			border-radius: 100%;
+			cursor: pointer;
+			text-align: center;
+			line-height: 20px;
+		}
+
+		.dian>li:hover,
+		.dian>li.hov {
+			background-color: #f09276;
+			color: white;
+		}
+
+		.sBox {
+			position: relative;
+			width: 100%;
+			height: 270px;
+			overflow: hidden;
+		}
+
+		.sList {
+			position: absolute;
+		}
+
+		.sList>li {
+			width: 900px;
+			height: 300px;
+			float: left;
+		}
+
+		.sList>img {
+			width: 900px;
+			height: 300px;
+		}
+
+		.dia {
+			position: absolute;
+			right: 50%;
+			transform: translateX(50%);
+			bottom: 10px;
+		}
+
+		.dia>li {
+			float: left;
+			margin: 10px;
+			width: 10px;
+			height: 10px;
+			background-color: white;
+			color: red;
+			border-radius: 100%;
+			cursor: pointer;
+			text-align: center;
+			line-height: 20px;
+		}
+
+		.dia>li:hover,
+		.dia>li.ho {
+			background-color: #f09276;
+			color: white;
+		}
+	</style>
 </head>
 
 <body>
@@ -393,6 +505,242 @@
 			</script>
 
 	</section>
+	<div class="hot_wp">
+		<div class="inner">
+			<div class="tittext">
+				<h2>热门系列选购</h2>
+				<p>杰出设计与精湛匠心工艺</p>
+			</div>
+			<div class="dow">
+				<div class="lbox">
+					<div class="to"></div>
+					<div class="seclunb">
+						<!-- //-------------------------------- -->
+
+						<div class="sliderBox" id="sliderBox">
+							<ul class="sliderList" id="sliderList">
+								<li><img src="./images/yidui.jpg"></li>
+								<li><img src="./images/shouz.jpg"></li>
+								<li><img src="./images/yinjie.jpg"></li>
+								<li><img src="./images/yidui.jpg"></li>
+							</ul>
+
+						</div>
+						<ul class="dian">
+							<li class="hov"></li>
+							<li></li>
+							<li></li>
+						</ul>
+
+
+						<!-- //-------------------------------- -->
+
+
+						<p>北极光追光系列婚戒</p>
+					</div>
+				</div>
+				<div class="rbox">
+					<div class="to"></div>
+					<div class="thrlunb">
+						<div class="sBox" id="sBox">
+							<ul class="sList" id="sList">
+								<li><img src="./images/lvzhi.jpg"></li>
+								<li><img src="./images/hongl.jpg"></li>
+								<li><img src="./images/yinzui.jpg"></li>
+								<li><img src="./images/lvzhi.jpg"></li>
+							</ul>
+
+						</div>
+						<ul class="dia">
+							<li class="ho"></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<p>INTO COLOUR悦色系列</p>
+					</div>
+				</div>
+				<script src="./js/startMove.js"></script>
+				<script>
+					let oSliderBox = document.getElementById("sliderBox");
+					let oUl = document.getElementById("sliderList");
+					let aList = oUl.children;
+					let perWidth = aList[0].offsetWidth; //单位宽，即每次移动的距离
+					let len = aList.length;
+					oUl.style.width = len * perWidth + "px";
+
+
+					//定时器 控制ul的移动
+					let count = 0;
+
+					let oBox = document.getElementById("sBox");
+					let ol = document.getElementById("sList");
+					let at = ol.children;
+					let pWidth = at[0].offsetWidth; //单位宽，即每次移动的距离
+					let le = at.length;
+					ol.style.width = le * pWidth + "px";
+
+
+					//定时器 控制ul的移动
+					let ct = 0;
+
+
+					let tim = setInterval(function () {
+						mov();
+					}, 3000)
+					let timer = setInterval(function () {
+						mov();
+					}, 3000)
+
+
+
+					function mov() {
+						count++;
+
+						if (ct == at.length) {
+							ol.style.left = 0; //在空白区块出现之前，把UL的位置改变一下，让实际的第一张展示在轮播区域；里
+							ct = 1; //为了下一张出现第二张
+						}
+						if (ct == -1) {
+							ol.style.left = -pWidth * (le - 1) + "px"; //倒数第一张
+							ct = le - 2;
+						}
+
+						for (let j = 0; j < aNus.length; j++) { //先清后加
+							aNus[j].className = "";
+						}
+
+						if (ct == le - 1) { //轮播区块走到最后一张（补的一张）
+							aNus[0].className = "ho"; //第一个小圆点点亮
+						} else {
+							aNus[ct].className = "ho";
+						}
+
+						startMove(ol, {
+							"left": -pWidth * ct
+						});
+
+
+					}
+
+
+					let oNu = document.querySelector(".dia");
+					let aNus = oNu.children;
+
+					for (let i = 0; i < aNus.length; i++) {
+						aNus[i].onmouseover = function () {
+							ct = i - 1;
+							mov();
+						}
+					}
+
+					//清定时器
+					oBox.onmouseover = function () {
+						clearInterval(tim);
+					}
+					//重新开启定时器
+					oBox.onmouseout = function () {
+						tim = setInterval(function () {
+							mov();
+						}, 3000)
+					}
+
+
+
+					function move() {
+
+						ct++;
+						if (count == aList.length) {
+							oUl.style.left = 0; //在空白区块出现之前，把UL的位置改变一下，让实际的第一张展示在轮播区域；里
+							count = 1; //为了下一张出现第二张
+						}
+						if (count == -1) {
+							oUl.style.left = -perWidth * (len - 1) + "px"; //倒数第一张
+							count = len - 2;
+						}
+
+						for (let j = 0; j < aNums.length; j++) { //先清后加
+							aNums[j].className = "";
+						}
+
+						if (count == len - 1) { //轮播区块走到最后一张（补的一张）
+							aNums[0].className = "hov"; //第一个小圆点点亮
+						} else {
+							aNums[count].className = "hov";
+						}
+
+
+
+					}
+
+					//小圆点
+					let oNum = document.querySelector(".dian");
+					let aNums = oNum.children;
+
+					for (let i = 0; i < aNums.length; i++) {
+						aNums[i].onmouseover = function () {
+							count = i - 1;
+							move();
+						}
+					}
+
+					//清定时器
+					oSliderBox.onmouseover = function () {
+						clearInterval(timer);
+					}
+					//重新开启定时器
+					oSliderBox.onmouseout = function () {
+						timer = setInterval(function () {
+							move();
+						}, 3000)
+					}
+
+
+				</script>
+			</div>
+
+
+		</div>
+	</div>
+	<div class="know">
+		<div class="inner">
+			<div class="tit">珠宝知识课堂</div>
+			<div class="dow">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="word">
+				<p>钻石4C知识</p>
+				<p>钻石证书</p>
+				<p>戒托款式</p>
+				<p>戒托材质</p>
+				<p>手寸测量</p>
+			</div>
+		</div>
+	</div>
+	<div class="why">
+		<div class="inner">
+			<h2>选购我们的理由</h2>
+			<div class="dow"></div>
+		</div>
+	</div>
+	<div class="test">
+		<div class="inner">
+			<div class="lef">
+				<p><img src="./images/niao.jpg" alt=""><span>品牌故事</span></p>
+				<a href="#">浏览钻石小鸟18年历史传承 &gt;</a>
+				<img class="ni" src="./images/niaoj.jpg" alt="">
+			</div>
+			<div class="rig">
+				<p><img src="./images/dingw.jpg" alt=""><span>体验中心</span></p>
+				<a href="#">覆盖全国70个城市，超100家门店 &gt;</a>
+				<img class="we" src="./images/weij.jpg" alt="">
+			</div>
+		</div>
+
+	</div>
 	<footer class="fot_wp">
     <div class="inner">
         <div class="above">
@@ -479,6 +827,7 @@
     </div>
 </footer>
 <div class="fixed"></div>
+<div class="fixrig"><img src="../images/1.jpg" alt=""><img src="../images/2.jpg" alt=""></div>
 </body>
 
 </html>

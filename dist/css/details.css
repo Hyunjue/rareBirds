@@ -147,3 +147,28 @@ li {
     color: #999;
     margin-top: 30px;
     padding-left: 10px; }
+
+.bigbox {
+  position: relative;
+  cursor: move; }
+
+#bigArea {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 400px;
+  height: 400px;
+  overflow: hidden; }
+  #bigArea > img {
+    position: absolute;
+    width: 800px;
+    height: 800px; }
+
+#zoom {
+  display: none;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: yellow;
+  opacity: .5; }

@@ -3,7 +3,7 @@ li {
   list-style: none; }
 
 .mid_wp {
-  background: pink;
+  background: white;
   flex: 1;
   display: flex;
   justify-content: center; }
@@ -225,36 +225,36 @@ li {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap; }
-        .mid_wp .inner .dujia .djshow div {
+        .mid_wp .inner .dujia .djshow > div {
           border-top: 1px solid #000;
           width: 571px;
           height: 414px;
-          background: coral; }
-          .mid_wp .inner .dujia .djshow div div {
+          background: white; }
+          .mid_wp .inner .dujia .djshow > div div {
             width: 254px;
             height: 45px;
             margin: 15px 0 14px; }
-            .mid_wp .inner .dujia .djshow div div a {
+            .mid_wp .inner .dujia .djshow > div div a {
               display: block;
               width: 100%;
               height: 100%; }
-          .mid_wp .inner .dujia .djshow div .djt1 {
+          .mid_wp .inner .dujia .djshow > div .djt1 {
             background: url(../images/dj1.jpg) no-repeat; }
-          .mid_wp .inner .dujia .djshow div .djt2 {
+          .mid_wp .inner .dujia .djshow > div .djt2 {
             background: url(../images/dj2.jpg) no-repeat; }
-          .mid_wp .inner .dujia .djshow div .djt3 {
+          .mid_wp .inner .dujia .djshow > div .djt3 {
             background: url(../images/dj3.jpg) no-repeat; }
-          .mid_wp .inner .dujia .djshow div .djt4 {
+          .mid_wp .inner .dujia .djshow > div .djt4 {
             background: url(../images/dj4.jpg) no-repeat; }
-          .mid_wp .inner .dujia .djshow div:last-child, .mid_wp .inner .dujia .djshow div:nth-child(3) {
+          .mid_wp .inner .dujia .djshow > div:last-child, .mid_wp .inner .dujia .djshow > div:nth-child(3) {
             margin-top: 30px; }
-          .mid_wp .inner .dujia .djshow div p {
+          .mid_wp .inner .dujia .djshow > div p {
             height: 70px;
             line-height: 70px;
             text-align: left;
             margin: 0;
             padding: 0; }
-            .mid_wp .inner .dujia .djshow div p a {
+            .mid_wp .inner .dujia .djshow > div p a {
               font-size: 14px;
               color: #000; }
     .mid_wp .inner .tradition {
@@ -303,3 +303,190 @@ li {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center; }
+
+.hot_wp {
+  background: #f9ece1;
+  display: flex;
+  justify-content: center; }
+  .hot_wp::after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden; }
+  .hot_wp .inner {
+    width: 1200px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 674px; }
+    .hot_wp .inner .tittext {
+      width: 100%;
+      height: 90px;
+      background: #f9ece1; }
+      .hot_wp .inner .tittext h2 {
+        width: 100%;
+        font-size: 30px;
+        font-family: "宋体";
+        height: 50px;
+        color: #000;
+        text-align: center;
+        font-weight: normal;
+        margin-bottom: 0; }
+      .hot_wp .inner .tittext p {
+        font-size: 14px;
+        color: #000;
+        text-align: center;
+        margin: 0; }
+    .hot_wp .inner .dow {
+      width: 100%;
+      flex: 1;
+      background: #f9ece1;
+      display: flex;
+      justify-content: space-between; }
+      .hot_wp .inner .dow .lbox, .hot_wp .inner .dow .rbox {
+        width: 571px;
+        background: #fff;
+        height: 513px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #f9ece1; }
+        .hot_wp .inner .dow .lbox .to, .hot_wp .inner .dow .rbox .to {
+          width: 80px;
+          height: 80px;
+          background: url(../images/huan.jpg) no-repeat center; }
+        .hot_wp .inner .dow .lbox .to:last-child, .hot_wp .inner .dow .rbox .to:last-child {
+          background: url(../images/lian.jpg) no-repeat center; }
+        .hot_wp .inner .dow .lbox .seclunb, .hot_wp .inner .dow .lbox .thrlunb, .hot_wp .inner .dow .rbox .seclunb, .hot_wp .inner .dow .rbox .thrlunb {
+          width: 571px;
+          height: 360px;
+          background: #f9ece1;
+          position: relative; }
+          .hot_wp .inner .dow .lbox .seclunb > p, .hot_wp .inner .dow .lbox .thrlunb > p, .hot_wp .inner .dow .rbox .seclunb > p, .hot_wp .inner .dow .rbox .thrlunb > p {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 66px;
+            line-height: 66px;
+            font-size: 14px;
+            width: 100%;
+            text-align: center; }
+
+.know {
+  display: flex;
+  justify-content: center; }
+  .know::after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden; }
+  .know .inner {
+    width: 1200px;
+    height: 435px;
+    display: flex;
+    flex-direction: column; }
+    .know .inner .tit {
+      height: 60px;
+      width: 100%;
+      text-align: center;
+      font-size: 30px;
+      font-family: "宋体";
+      color: #000;
+      line-height: 60px; }
+    .know .inner .dow {
+      height: 250px;
+      margin-top: 50px;
+      width: 100%;
+      background: url(../images/know.jpg) no-repeat center;
+      display: flex;
+      justify-content: space-between; }
+    .know .inner .word {
+      width: 100%;
+      height: 20px;
+      display: flex;
+      justify-content: space-between; }
+      .know .inner .word p {
+        flex: 1;
+        text-align: center; }
+
+.why {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #f1dad4;
+  border-bottom: 1px solid #f1dad4; }
+  .why::after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden; }
+  .why .inner {
+    width: 1200px;
+    height: 178px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .why .inner h2 {
+      width: 250px;
+      background: #fff;
+      padding: 0 20px;
+      height: 73px;
+      font-size: 30px;
+      font-weight: normal;
+      text-align: center;
+      margin-top: -20px; }
+    .why .inner .dow {
+      width: 1000px;
+      height: 56px;
+      background: url(../images/why.jpg) no-repeat center; }
+
+tradition {
+  overflow: hidden; }
+
+.test {
+  display: flex;
+  justify-content: center; }
+  .test::after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden; }
+  .test .inner {
+    width: 1200px;
+    height: 630px;
+    display: flex;
+    justify-content: space-between; }
+    .test .inner > div {
+      width: 571px;
+      height: 510px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .test .inner > div > img {
+        margin-top: 45px; }
+      .test .inner > div p {
+        margin-top: 75px;
+        width: 220px;
+        height: 40px;
+        display: flex; }
+        .test .inner > div p img {
+          padding-right: 15px; }
+        .test .inner > div p span {
+          font-size: 32px;
+          color: #000; }
+      .test .inner > div a {
+        width: 220px;
+        display: block;
+        text-align: left;
+        color: #000;
+        font-size: 14px; }

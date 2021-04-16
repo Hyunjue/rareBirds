@@ -324,6 +324,7 @@ html body .fot_wp .inner .down .ft img {
   right: 15px;
   width: 40px;
   height: 40px;
+  display: none;
   z-index: 100;
   background-position: 0 -40px;
   overflow: hidden;
@@ -492,4 +493,18 @@ html body .fot_wp .inner .down .ft img {
   line-height: 48px;
   display: block;
   color: #000;
+}
+
+.fixrig {
+  position: fixed;
+  z-index: 100;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.fixrig > img:first-child {
+  margin-bottom: 2px;
 }

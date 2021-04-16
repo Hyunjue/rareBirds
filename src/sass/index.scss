@@ -43,7 +43,7 @@ li{
     &:after{
         @include clean();
     }
-    background: $pink;
+    background: white;
     flex: $yi;
     display: $flex;
     justify-content: $center;
@@ -54,55 +54,55 @@ li{
         width: 1200px;
         // 首页轮播
 // -----------------------------------------------------------
-.t_ul{
-    // 去掉滚动图片的小黑点样式
-    @include qul();
-    list-style: $none; 
-    width: $b100;
-    height: 666px;    
-    position: relative;  // 设置想对定位
-    // 重新定义一个ul用li来实现小黑点样式
-    display: $flex;
-    justify-content: $center;
-    & > li{
-        width: $b100;
-        height: $b100;
-        position: $absolute;
-        display: $flex;
-        justify-content: $center;
-        a{
-            display: block;
+        .t_ul{
+            // 去掉滚动图片的小黑点样式
+            @include qul();
+            list-style: $none; 
             width: $b100;
-            height: $b100;
+            height: 666px;    
+            position: relative;  // 设置想对定位
+            // 重新定义一个ul用li来实现小黑点样式
             display: $flex;
-            justify-content: center;
-            img{
-                cursor: pointer;
+            justify-content: $center;
+            & > li{
+                width: $b100;
+                height: $b100;
+                position: $absolute;
+                display: $flex;
+                justify-content: $center;
+                a{
+                    display: block;
+                    width: $b100;
+                    height: $b100;
+                    display: $flex;
+                    justify-content: center;
+                    img{
+                        cursor: pointer;
+                    }
+                }
+            }
+            .dot{
+                @include qul();
+                width: 54px;
+                height: 8px;
+                position: $absolute;
+                z-index: 50;
+                bottom: 32px;
+                background: $transparent;
+                display: $flex;
+                justify-content: $spbtn;
+                align-items: $center;
+                & > li{
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: rgb(255, 255, 255);
+                }
+                .banner_btn{
+                    background: #f09276;
+                }
             }
         }
-    }
-    .dot{
-        @include qul();
-        width: 54px;
-        height: 8px;
-        position: $absolute;
-        z-index: 50;
-        bottom: 32px;
-        background: $transparent;
-        display: $flex;
-        justify-content: $spbtn;
-        align-items: $center;
-        & > li{
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgb(255, 255, 255);
-        }
-        .banner_btn{
-            background: #f09276;
-        }
-    }
-}
         .search{
             width: $b100;
             height: 293.5px;
@@ -293,11 +293,11 @@ li{
                 display: $flex;
                 justify-content: $spbtn;
                 flex-wrap: wrap;
-                div{
+                & > div{
                     border-top: 1px solid #000;
                     width: 571px;
                     height: 414px;
-                    background: coral;
+                    background: rgb(255, 255, 255);
                     div{
                         width: 254px;
                         height: 45px;
@@ -392,5 +392,211 @@ li{
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+    }
+}
+
+// 热门系列选购
+.hot_wp{
+    &::after{
+        @include clean();
+    }
+    
+    background: #f9ece1;
+    display: flex;
+    justify-content: center;
+    .inner{
+        width: 1200px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        height: 674px;
+        .tittext{
+            width: $b100;
+            height: 90px;
+            background: #f9ece1;
+            h2{
+                width: $b100;
+                font-size: 30px;
+                font-family: "宋体";
+                height: 50px;
+                color: #000;
+                text-align: center;
+                font-weight: normal;
+                margin-bottom: 0;
+            }
+            p{
+                font-size: 14px;
+                color: #000;
+                text-align: center;
+                margin: 0;
+            }
+        }
+       .dow{
+            width: $b100;
+            flex: 1;
+            background: #f9ece1;
+            display: $flex;
+            justify-content: space-between;
+            .lbox,.rbox{
+                width: 571px;
+                background: $white;
+                height: 513px;
+                margin-top: 10px;
+                display: $flex;
+                flex-direction: column;
+                align-items: center;
+                background: #f9ece1;
+                .to{
+                    width: 80px;
+                    height: 80px;
+                    
+                    
+                        background: url(../images/huan.jpg) no-repeat center;
+                    
+            
+                }
+                .to:last-child{
+                    background: url(../images/lian.jpg) no-repeat center;
+                }
+                .seclunb,.thrlunb{
+                    width: 571px;
+                    height: 360px;
+                    background:#f9ece1;
+                    position: relative;
+                    & > p{
+                        position: absolute;
+                        bottom: 15px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 66px;
+                        line-height: 66px;
+                        font-size: 14px;
+                        width: $b100;
+                        text-align: center;
+                    }
+                }
+            }
+       }
+    }
+}
+.know{
+    &::after{
+        @include clean();
+    }
+    
+    display: flex;
+    justify-content: center;
+    .inner{
+        width: 1200px;
+        height: 435px;
+        display: flex;
+        flex-direction: column;
+        .tit{
+            height: 60px;
+            width: $b100;
+            text-align: center;
+            font-size: 30px;
+            font-family: "宋体";
+            color: #000;
+            line-height: 60px;
+        }
+        .dow{
+            height: 250px;
+            margin-top: 50px;
+            width: $b100;
+            background: url(../images/know.jpg) no-repeat center;
+            display: flex;
+            justify-content: space-between;
+        }
+        .word{
+            width: $b100;
+            height: 20px;
+            display: flex;
+            justify-content: space-between;
+            p{
+                flex: 1;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.why{
+    &::after{
+        @include clean();
+        
+    }
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #f1dad4;
+    border-bottom: 1px solid #f1dad4;
+    .inner{
+        width: 1200px;
+        height: 178px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2{
+            width: 250px;
+            background: #fff;
+            padding: 0 20px;
+            height: 73px;
+            font-size: 30px;
+            font-weight: normal;
+            text-align: center;
+            margin-top: -20px;
+        }
+        .dow{
+            width: 1000px;
+            height: 56px;
+            background: url(../images/why.jpg) no-repeat center;
+        }
+    }
+}
+tradition{
+    overflow: hidden;
+}
+.test{
+    &::after{
+        @include clean();
+    }
+    display: flex;
+    justify-content: center;
+    .inner{
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        justify-content: space-between;
+        &>div{
+            width: 571px;
+            height: 510px;
+            background: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &>img{
+                margin-top: 45px;
+            }
+            p{
+                margin-top: 75px;
+                width: 220px;
+                height: 40px;
+                display: flex;
+                img{
+                    padding-right: 15px;
+                }
+                span{
+                    font-size: 32px;
+                    color: #000;
+                }
+            }
+            a{
+                width: 220px;
+                display: block;
+                text-align: left;
+                color: #000;
+                font-size: 14px;
+            }
+        }
     }
 }

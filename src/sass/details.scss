@@ -201,3 +201,31 @@ li{
         padding-left: 10px;
     }
 }
+
+.bigbox{
+    position: relative;
+    cursor: move;
+}
+#bigArea{
+    display: none;
+    position: absolute;
+    left: $b100;
+    top: 0;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    &>img{
+        position: absolute;
+
+        width: 800px;
+        height: 800px;
+    }
+}
+#zoom{
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    opacity: .5;
+}

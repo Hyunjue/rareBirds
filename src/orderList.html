@@ -61,6 +61,7 @@
                                     $(".dele a").on("click", function () {
                                         let index = $(this).index();
                                         $(this).parents(".box").eq(index).remove();
+                                        $(location).attr("href", "./orderList.html");
                                         // 删除购物车
                                         let tid = res.data[index].pid;
                                         $.ajax({
@@ -72,6 +73,7 @@
                                                 console.log(res);
                                             }
                                         });
+
                                     });
 
                                 }
@@ -105,6 +107,7 @@
                             }
 
                             $(".box").remove();
+                            $(location).attr("href", "./orderList.html");
                         })
                     };
                 })

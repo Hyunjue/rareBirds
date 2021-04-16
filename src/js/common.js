@@ -44,7 +44,27 @@
 
     // 购物车
 
-
+    $(".fixrig").find("img").eq(1).on("click", function () {
+        if ($.cookie("theTel") == "" || $.cookie("theTel") == null) {
+            return;
+        }
+        $(location).attr("href", "../orderList.html");
+    })
 
     // -----------------------
 });
+window.onload = function () {
+    window.addEventListener("scroll", function () {
+        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (scrollTop > 1000) {
+            $(".fixed").css("display", "block");
+        } else {
+            $(".fixed").css("display", "none");
+        }
+    })
+    $(".fixed").click(function () {
+        $("html,body").animate({ scrollTop: "0px" }, 500);
+    })
+
+
+}

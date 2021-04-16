@@ -8,6 +8,8 @@ $(function () {
         contentType: "application/json",
         success: function (res) {
             $(".libox div").eq(0).find("img").prop("src", res.data.pimg);
+            $(".bigbox").find(".timg").prop("src", res.data.pimg);
+            $("#bigArea").find("img").prop("src", res.data.pimg);
             console.log(res);
         }
     });
@@ -52,7 +54,7 @@ $(function () {
                 $.ajax({
                     type: "get",
                     url: 'http://jx.xuzhixiang.top/ap/api/cart-list.php',
-                    async: false,
+
                     data: { id: '51181' },
                     contentType: "application/json",
                     success: function (res) {
@@ -73,7 +75,7 @@ $(function () {
                         console.log(tPid);
                     }
                 });
-                $(location).attr("href", "../orderList.html");
+                $(location).attr("href", "../index.html");
                 //-------------------------------------
 
             })
@@ -84,3 +86,56 @@ $(function () {
     });
 
 })
+
+window.onload = function () {
+    var oMidArea = document.querySelector(".bigbox");
+    var oZoom = document.getElementById("zoom");
+    var oBigArea = document.getElementById("bigArea");
+    // var oZoomBox = document.getElementById("zoomBox");
+    var oBigImg = oBigArea.children[0];
+    var oMidImg = document.querySelector(".timg");
+
+    oMidArea.onmouseover = function () {
+        oZoom.style.display = "block";
+        oBigArea.style.display = "block";
+    }
+    oMidArea.onmouseout = function () {
+        oZoom.style.display = "none";
+        oBigArea.style.display = "none";
+    }
+
+
+    oMidArea.onmousemove = function (e) {
+
+        //控制放大镜的移动
+        var evt = e;
+        var x = evt.pageX - oMidArea.offsetLeft - oZoom.offsetWidth / 2;
+        var y = evt.pageY - oMidArea.offsetTop - oZoom.offsetHeight / 2;
+
+        if (x <= 0) {
+            x = 0;
+        }
+        if (x >= oMidArea.offsetWidth - oZoom.offsetWidth) {
+            x = oMidArea.offsetWidth - oZoom.offsetWidth;
+        }
+        if (y <= 0) {
+            y = 0;
+        }
+        if (y >= oMidArea.offsetHeight - oZoom.offsetHeight) {
+            y = oMidArea.offsetHeight - oZoom.offsetHeight;
+        }
+
+        oZoom.style.left = x + "px";
+        oZoom.style.top = y + "px";
+
+        //控制大图的移动
+        oBigImg.style.left = - oZoom.offsetLeft / oMidArea.offsetWidth * oBigImg.offsetWidth + "px";
+        oBigImg.style.top = - oZoom.offsetTop / oMidArea.offsetHeight * oBigImg.offsetHeight + "px";
+
+    }
+
+    //点击缩略图 切图片
+
+
+
+}

@@ -44,19 +44,19 @@ li{
     &:after{
         @include clean();
     }
-    background: $pink;
+    background: white;
     flex: $yi;
     display: $flex;
     justify-content: $center;
     .inner{
         width: 1200px;
         height: 700px;
-        background: cyan;
+        background: rgb(255, 255, 255);
         .count{
             width: $b100;
             height: 50px;
             border-top: 1px solid #000;
-            background: grey;
+            background: rgb(255, 255, 255);
             display: $flex;
             justify-content: space-between;
             .l{
@@ -88,12 +88,12 @@ li{
             }
             span{
                 display: block;
-                background: yellowgreen;
+                background: rgb(255, 255, 255);
                 width: 100px;
                 height: 50px;
                 text-align: $center;
                 line-height: 50px;
-                color: #000;
+                color: rgb(228, 31, 31);
                 font-size: 14px;
             }
         }
@@ -110,7 +110,7 @@ li{
         .box{
             width: 1200px;
             height: 150px;
-            background-color: gold;
+            background: rgb(172, 72, 72);
             display: flex;
             div{
                 width: 300px;
@@ -139,7 +139,7 @@ li{
 }
 .box .lef{
 
-    background-color: pink;
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     img{
@@ -151,21 +151,21 @@ li{
     height: 100px;
     text-align: center;
     line-height: 100px;
-    background: cadetblue;    
+    background: rgb(255, 255, 255);    
     }
 }
 .box .mid{
 
-    background: rgb(145, 58, 58);
+    background: rgb(255, 255, 255);
     line-height: 150px;
     text-align: center;
 }
 .box .rig{
    
-    background: chocolate;
+    background: rgb(255, 255, 255);
 }
 .dele{
     a{
-        color: #000;
+        color: rgb(255, 255, 255);
     }
 }
